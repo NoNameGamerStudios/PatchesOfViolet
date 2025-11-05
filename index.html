@@ -1,0 +1,37 @@
+<!doctype html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8" />
+        <title>Menu - Patches Of Violet</title>
+        <link rel="stylesheet" href="styles.css" />
+        <!--   <script async defer src="https://unpkg.com/httprelay@0.0.44/lib/non-mod/httprelay.js"></script> -->
+        <script async defer src="serveropen.js"></script>
+    </head>
+
+    <body>
+        <header class="statusmsg">
+            <p>
+                Hey! This site is still in early development, expect bugs! Read more on
+                <a href="https://corbyte.online">Our main website</a>
+            </p>
+        </header>
+
+        <div class="titlediv" id="#home">
+            <h1 class="title">Patches Of Violet </h1>
+            <h4 class="subtitle">Version 0.2.0</h4>
+        </div>
+        <center>
+            <input id="UsernameInput" /> <br /><br />
+            <button id="scanNetwork"><h2>Scan For Rooms</h2></button>
+            <button onclick="readInformation()" id="makeServer"><h2>Make A Space</h2></button> <br /><br />
+            <a href="userinfo.html">
+                <button id="userInfo"><h2>View User Info</h2></button>
+                <br /><br />
+            </a>
+        </center>
+
+        <script src="consoledisplay.js"></script>
+        <script async defer src="userreq.js"></script>
+        <script src="https://unpkg.com/peerjs@1.5.5/dist/peerjs.min.js"></script>
+    </body>
+</html>
