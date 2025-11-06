@@ -13,7 +13,7 @@ Patches Of Violet uses a Peerjs's API, but has modified the commands.
     3. Users will be prompted to create a username, however each account is not secured by means other than Identification and Time verified.
     4. Once all checks have passed, the chat window will replace the menu, allowing for the communication between clients
     
-***I ask that you do not attempt to clone my work under a different name, in accordance with the licence.***
+***I ask that you do not attempt to clone my work under a different name, in accordance with the license.***
 
 
 ----

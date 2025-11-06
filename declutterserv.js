@@ -4,7 +4,7 @@ addEventListener("DOMContentLoaded", (event) => {
     let ClientSession = ClientUsername + ClientDate.getDate() + ClientDate.getMilliseconds();
 
     document.getElementById("scanNetwork").onclick = initContext;
-    let peer = new Peer([ClientSession]);
+    let peer = new Peer(ClientSession, null);
 
     function initContext() {
         console.log(ClientSession);
