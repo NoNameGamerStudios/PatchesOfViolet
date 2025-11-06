@@ -4,19 +4,12 @@ addEventListener("DOMContentLoaded", (event) => {
     let ClientSession = ClientUsername + ClientDate.getDate() + ClientDate.getMilliseconds();
 
     document.getElementById("scanNetwork").onclick = initContext;
-    let peer = new Peer(ClientSession);
-    
-    function initContext() {
-        
+    let peer = new Peer([ClientSession]);
 
-        if (!ClientUsername.trim()) {
-            console.warn("User Did Not Create a Username! Aborting.");
-            alert("Please Create A Username.");
-        } else {
-            console.log(ClientSession);
-            peer.on("open", function (id) {
+    function initContext() {
+        console.log(ClientSession);
+        peer.on("open", function (id) {
             console.log("My peer ID is: " + id);
         });
-        }
     }
 });
