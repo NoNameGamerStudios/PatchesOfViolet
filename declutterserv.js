@@ -8,7 +8,7 @@ addEventListener("DOMContentLoaded", (event) => {
 
     function initContext() {
         let peer = new Peer(ClientSession);
-        console.log(ClientSession);
+        console.log(ClientSession + " Is the standard client session ID");
         peer.on("open", function (id) {
             console.log("My peer ID is: " + id);
         });
