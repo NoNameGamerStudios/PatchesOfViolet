@@ -27,4 +27,5 @@ function declareEnv2() {
         const date = new Date();
         const serverStartDate = date.getHours + " " + date.getMinutes + " " + date.getDate;
         console.log(serverName + " " + serverStartDate);
+        console.log(ClientSession + " Is the base client Session")
         }   
