@@ -48,30 +48,37 @@ function serverSide() {
     if (!ClientUsername.trim()) {
         alert("Please Create A Username");
     } else {
+        // Server Declaration Info
         console.info("Server ID is:" + serverID);
         console.info("Server Start Date is " + serverStartDate);
         console.info("Client Username Is " + ClientUsername + " Client Session Is " + ClientSession);
         console.info("Server Title Is " + serverTitle);
+
+            let peer = new Peer(serverID);
+    
+            var conn = peer.connect(connectionAddress);
+
+
+        conn.on('open', function() {
+         // Receive messages
+         conn.on('data', function(data) {
+         //   console.log('Received', data);
+         });
+
+            // Send messages
+            conn.send('Hi! My User Is ' + ClientUsername);
+        });
+        peer.on('connection', function(conn) {
+            conn.send("There Is A New Connected User. " + ClientSession);
+        });
+
+        peer.on('connection', function(conn) {
+            console.log("A connection has been made.");
+        });
+
     }
 
 
-    let peer = new Peer(serverID, {debug: 3});
-    
-    var conn = peer.connect(connectionAddress);
+  
 
-
-
-    conn.on('open', function() {
-        // Receive messages
-        conn.on('data', function(data) {
-            console.log('Received', data);
-        });
-
-        // Send messages
-        conn.send('Hi! My User Is ' + ClientUsername);
-    });
-
-    peer.on('connection', function(conn) {
-        console.log("A connection has been made.");
-    });
 }
