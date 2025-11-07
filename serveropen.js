@@ -22,6 +22,16 @@ addEventListener("DOMContentLoaded", (event) => {
         }
 
         let peer = new Peer(serverID);
+        
+        conn.on('open', function() {
+	    // Receive messages
+	    conn.on('data', function(data) {
+	      console.log('Received', data);
+	    });
+
+	    // Send messages
+    	conn.send('Hi! My User Is ' + ClientUsername);
+    });
 
         peer.on('connection', function(conn) { 
             console.log("A connection has been made.");
