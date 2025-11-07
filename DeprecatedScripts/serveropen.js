@@ -1,5 +1,5 @@
 addEventListener("DOMContentLoaded", (event) => {
-    document.getElementById("makeServer").onclick = declareEnv;
+    document.getElementById("").onclick = declareEnv;
 
   
     function declareEnv() {
