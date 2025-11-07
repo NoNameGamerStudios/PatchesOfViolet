@@ -17,7 +17,7 @@ function initContext() {
     peer.on("open", function(id) {
         console.log("My peer ID is: " + id);
         // Below code should allow for connections to a specific ID
-        var conn = peer.connect(connectionAddress);
+        var conn = peer.connect(connectionAddress, {debug: 3});
         conn.on('open', function() {
             // Receive messages
             conn.on('data', function(data) {
@@ -54,9 +54,10 @@ function serverSide() {
         console.info("Server Title Is " + serverTitle);
     }
 
-    var conn = peer.connect(connectionAddress);
 
     let peer = new Peer(serverID, {debug: 3});
+    
+    var conn = peer.connect(connectionAddress);
 
 
 
