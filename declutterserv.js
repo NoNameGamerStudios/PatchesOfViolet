@@ -3,7 +3,7 @@ document.getElementById("makeServer").onclick = serverSide;
 
 //variables
 let connectionAddress = document.getElementById("destinationAddress").value;
-var conn = peer.connect(connectionAddress);
+
 
 
 function initContext() {
@@ -17,7 +17,7 @@ function initContext() {
     peer.on("open", function(id) {
         console.log("My peer ID is: " + id);
         // Below code should allow for connections to a specific ID
-        
+        var conn = peer.connect(connectionAddress);
         conn.on('open', function() {
             // Receive messages
             conn.on('data', function(data) {
@@ -54,7 +54,9 @@ function serverSide() {
         console.info("Server Title Is " + serverTitle);
     }
 
-    let peer = new Peer(serverID);
+    var conn = peer.connect(connectionAddress);
+
+    let peer = new Peer(serverID, {debug: 3});
 
 
 
