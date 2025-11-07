@@ -54,7 +54,7 @@ function serverSide() {
         console.info("Client Username Is " + ClientUsername + " Client Session Is " + ClientSession);
         console.info("Server Title Is " + serverTitle);
 
-            let peer = new Peer(serverID);
+            let peer = new Peer(serverID, {Debug : 3});
     
             var conn = peer.connect(connectionAddress);
 
