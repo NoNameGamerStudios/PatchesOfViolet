@@ -21,6 +21,8 @@ addEventListener("DOMContentLoaded", (event) => {
             console.info("Server Title Is " + serverTitle);
         }
 
+        let peer = new Peer(serverID);
+
         peer.on('connection', function(conn) { 
             console.log("A connection has been made.");
          });
