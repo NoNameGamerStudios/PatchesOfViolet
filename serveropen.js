@@ -22,7 +22,11 @@ addEventListener("DOMContentLoaded", (event) => {
         }
 
         let peer = new Peer(serverID);
-        
+        peer.on('connection', function(conn) {
+            console.log("I don't know what im doing with this function :p");
+         });
+
+         
         conn.on('open', function() {
 	    // Receive messages
 	    conn.on('data', function(data) {
