@@ -33,5 +33,8 @@ addEventListener("DOMContentLoaded", (event) => {
     }
     function createServerVisiblity() {
         console.error(ClientSession);
+        peer.on('connection', function(conn) { 
+            console.log("A connection has been made.");
+         });
     }
 });
