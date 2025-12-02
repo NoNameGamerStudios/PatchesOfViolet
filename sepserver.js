@@ -1,5 +1,7 @@
 document.getElementById("makeServer").onclick = serverSide;
 
+function serverSide(){
+    
 const date = new Date();
     let ClientUsername = document.getElementById("UsernameInput").value;
     let ClientSession = ClientUsername + date.getDate() + date.getMilliseconds();
@@ -41,3 +43,4 @@ const date = new Date();
         });
 
     }
+}
